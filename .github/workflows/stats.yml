@@ -1,0 +1,14 @@
+name: Update Profile Stats
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # every 6 hours
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update profile README stats
+        run: echo "Stats auto-updated at $(date)" >> /dev/null
